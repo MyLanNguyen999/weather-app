@@ -36,7 +36,7 @@ h3{
     font-size: 18px;
 }
 
-.container{
+.weather-app{
     max-width: 667px ;
     max-height: 460px;
     display: block;

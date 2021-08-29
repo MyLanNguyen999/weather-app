@@ -15,148 +15,149 @@
 <body>
 
     <div class=container>
-        <h1>
-            <form>
-                <input type="text" class=searchInput id=search-input placeholder="Enter a place here" />
+        <div class=weather-app>
+            <h1>
+                <form>
+                    <input type="text" class=searchInput id=search-input placeholder="Enter a place here" />
 
-                <button class="button"> Search </button>
-                <button1 class="button"> Current </button1>
+                    <button class="button"> Search </button>
+                    <button1 class="button"> Current </button1>
 
-            </form>
-        </h1>
+                </form>
+            </h1>
 
-        <h3>
-            Current GPS
-        </h3>
-
-
-        <div class=row>
-            <div class="col-6">
-                <div class="card-body" label="currentStatus" style="width: 15rem;">
-                    <span class=currentCity id=current-city>
-                        Houston
-                    </span>
-                    <br />
-                    <span id=current-date>
-                        Saturday, July 24, 2021
-                    </span>
-                    <br />
-                    <span id=current-time>
-                        Current time: 9pm
-                    </span>
-                    <br />
-                    <span id=description></span>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="card-body" style="width: 15rem;">
-                    Humidity: <span id=humidity>74</span>%
-                    <br />
-                    Wind: <span id=wind>2</span>km/h
-
-                </div>
-            </div>
-        </div>
+            <h3>
+                Current GPS
+            </h3>
 
 
-        <div class="row">
-            <div class="col-7">
-                <h2>
-
-                    <strong><span id=degreeShow>
-                            29
+            <div class=row>
+                <div class="col-6">
+                    <div class="card-body" label="currentStatus" style="width: 15rem;">
+                        <span class=currentCity id=current-city>
+                            Houston
                         </span>
+                        <br />
+                        <span id=current-date>
+                            Saturday, July 24, 2021
+                        </span>
+                        <br />
+                        <span id=current-time>
+                            Current time: 9pm
+                        </span>
+                        <br />
+                        <span id=description></span>
+                    </div>
+                </div>
 
-                        <a href=# id=celsius>℃</a>|<a href=# id=farenheit>°F
-                        </a>
+                <div class="col-6">
+                    <div class="card-body" style="width: 15rem;">
+                        Humidity: <span id=humidity>74</span>%
+                        <br />
+                        Wind: <span id=wind>2</span>km/h
 
-                    </strong>
-
-                </h2>
-                <p class=highandlow-temp>
-                    H:<span id=high-temp>37</span>℃
-                    L:<span id=low-temp>37</span>℃
-
-                </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-5">
-                <span class=sun>
-                    🌞
-                </span>
-            </div>
-        </div>
 
 
-
-
-        <div class="daily-temp">
             <div class="row">
+                <div class="col-7">
+                    <h2>
 
-                <div class="col-2">
+                        <strong><span id=degreeShow>
+                                29
+                            </span>
 
-                    <p class=detail-temp-sun>
-                        SUN
-                        <br />
-                        7/25
-                        <br />
-                        ☀️
-                        <br />
-                        37℃
-                    </p>
+                            <a href=# id=celsius>℃</a>|<a href=# id=farenheit>°F
+                            </a>
 
-                </div>
+                        </strong>
 
-                <div class="col-2">
-                    <p class=detail-temp-mon>
-                        MON
-                        <br />
-                        7/26
-                        <br />
-                        🌥
-                        <br />
-                        28℃
+                    </h2>
+                    <p class=highandlow-temp>
+                        H:<span id=high-temp>37</span>℃
+                        L:<span id=low-temp>37</span>℃
+
                     </p>
                 </div>
-
-                <div class="col-2">
-
-                    <p class=detail-temp-tue>
-                        TUE
-                        <br />
-                        7/27
-                        <br />
-                        ☀️
-                        <br />
-                        30℃
-                    </p>
+                <div class="col-5">
+                    <span class=sun>
+                        🌞
+                    </span>
                 </div>
+            </div>
 
-                <div class="col-2">
 
-                    <p class=detail-temp-wed>
-                        WED
-                        <br />
-                        7/28
-                        <br />
-                        🌥
-                        <br />
-                        24℃
-                    </p>
+
+
+            <div class="daily-temp">
+                <div class="row">
+
+                    <div class="col-2">
+
+                        <p class=detail-temp-sun>
+                            SUN
+                            <br />
+                            7/25
+                            <br />
+                            ☀️
+                            <br />
+                            37℃
+                        </p>
+
+                    </div>
+
+                    <div class="col-2">
+                        <p class=detail-temp-mon>
+                            MON
+                            <br />
+                            7/26
+                            <br />
+                            🌥
+                            <br />
+                            28℃
+                        </p>
+                    </div>
+
+                    <div class="col-2">
+
+                        <p class=detail-temp-tue>
+                            TUE
+                            <br />
+                            7/27
+                            <br />
+                            ☀️
+                            <br />
+                            30℃
+                        </p>
+                    </div>
+
+                    <div class="col-2">
+
+                        <p class=detail-temp-wed>
+                            WED
+                            <br />
+                            7/28
+                            <br />
+                            🌥
+                            <br />
+                            24℃
+                        </p>
+                    </div>
+
+                    <div class="col-2">
+                        <p class=detail-temp-thu>
+                            THU
+                            <br />
+                            7/29
+                            <br />
+                            🌥
+                            <br />
+                            22℃
+                        </p>
+                    </div>
                 </div>
-
-                <div class="col-2">
-                    <p class=detail-temp-thu>
-                        THU
-                        <br />
-                        7/29
-                        <br />
-                        🌥
-                        <br />
-                        22℃
-                    </p>
-                </div>
-
 
             </div>
 
