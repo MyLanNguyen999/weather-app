@@ -1,0 +1,121 @@
+
+
+
+h1{
+    color:black;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    
+}
+
+
+
+h2{
+    font-size: 60px;
+    padding:0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h3{
+    font-size: 15px;
+    padding:0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.sun{
+    display: block;
+    font-size: 120px;
+    margin:-50px -10px;
+    
+   
+   
+
+}
+
+.highandlow-temp{
+    font-size: 18px;
+}
+
+.container{
+    max-width: 667px ;
+    max-height: 460px;
+    display: block;
+   box-shadow: 10px 10px 15px grey ;
+     border: solid grey;
+    padding: 20px 20px;
+     margin: 100px auto;
+     background: radial-gradient(circle at 7.5% 24%, rgb(237, 161, 193) 0%, rgb(250, 178, 172) 25.5%, rgb(190, 228, 210) 62.3%, rgb(215, 248, 247) 93.8%);
+     
+}
+
+
+.button{
+    background-color: white;
+   
+    border: dotted grey;
+    margin: 0 50px;    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.button1{
+    background-color: white;
+   
+    border: dotted grey;
+    margin: 0 50px;    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.col-6{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.card-body{
+    display: inline-block;
+    padding: 10px 5px;
+}
+.daily-temp{
+    margin: 0 5px;
+}
+.col-2{
+    border: dotted grey;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    
+}
+
+
+.detail-temp-sun{
+    text-align: center;
+}
+.detail-temp-mon{
+    text-align: center;
+}
+.detail-temp-tue{
+    text-align: center;
+}
+.detail-temp-wed{
+    text-align: center;
+}
+.detail-temp-thu{
+    text-align: center;
+}
+
+#celsius{
+    font-size: 30px;
+    position: relative;
+    top: -20px;
+    text-decoration: none;
+    color: darkblue;
+    
+}
+#farenheit{
+    font-size: 30px;
+    position: relative;
+    top: -20px;
+    text-decoration: none;
+    color: darkblue;
+}
