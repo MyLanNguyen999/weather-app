@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div class=container>
+        <h1>
+            <form>
+                <input type="text" class=searchInput id=search-input placeholder="Enter a place here" />
+
+                <button class="button"> Search </button>
+                <button1 class="button"> Current </button1>
+
+            </form>
+        </h1>
+
+        <h3>
+            Current GPS
+        </h3>
+
+
+        <div class=row>
+            <div class="col-6">
+                <div class="card-body" label="currentStatus" style="width: 15rem;">
+                    <span class=currentCity id=current-city>
+                        Houston
+                    </span>
+                    <br />
+                    <span id=current-date>
+                        Saturday, July 24, 2021
+                    </span>
+                    <br />
+                    <span id=current-time>
+                        Current time: 9pm
+                    </span>
+                    <br />
+                    <span id=description></span>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="card-body" style="width: 15rem;">
+                    Humidity: <span id=humidity>74</span>%
+                    <br />
+                    Wind: <span id=wind>2</span>km/h
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-7">
+                <h2>
+
+                    <strong><span id=degreeShow>
+                            29
+                        </span>
+
+                        <a href=# id=celsius>℃</a>|<a href=# id=farenheit>°F
+                        </a>
+
+                    </strong>
+
+                </h2>
+                <p class=highandlow-temp>
+                    H:<span id=high-temp>37</span>℃
+                    L:<span id=low-temp>37</span>℃
+
+                </p>
+            </div>
+            <div class="col-5">
+                <span class=sun>
+                    🌞
+                </span>
+            </div>
+        </div>
+
+
+
+
+        <div class="daily-temp">
+            <div class="row">
+
+                <div class="col-2">
+
+                    <p class=detail-temp-sun>
+                        SUN
+                        <br />
+                        7/25
+                        <br />
+                        ☀️
+                        <br />
+                        37℃
+                    </p>
+
+                </div>
+
+                <div class="col-2">
+                    <p class=detail-temp-mon>
+                        MON
+                        <br />
+                        7/26
+                        <br />
+                        🌥
+                        <br />
+                        28℃
+                    </p>
+                </div>
+
+                <div class="col-2">
+
+                    <p class=detail-temp-tue>
+                        TUE
+                        <br />
+                        7/27
+                        <br />
+                        ☀️
+                        <br />
+                        30℃
+                    </p>
+                </div>
+
+                <div class="col-2">
+
+                    <p class=detail-temp-wed>
+                        WED
+                        <br />
+                        7/28
+                        <br />
+                        🌥
+                        <br />
+                        24℃
+                    </p>
+                </div>
+
+                <div class="col-2">
+                    <p class=detail-temp-thu>
+                        THU
+                        <br />
+                        7/29
+                        <br />
+                        🌥
+                        <br />
+                        22℃
+                    </p>
+                </div>
+
+
+            </div>
+            <div class=openSource>
+                <br />
+                <p id=open-source>
+                    <a href="https://github.com/MyLanNguyen999/she-codes-plus" id="website-link"
+                        target=_blank>Open-Source
+                        Code </a>
+                    by
+                    MyLan Nguyen
+
+                </p>
+
+            </div>
+            <script src="src/test.js">
+            </script>
+</body>
+
+
+</html>
