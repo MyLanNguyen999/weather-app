@@ -105,12 +105,21 @@ h3 {
   position: relative;
   top: -20px;
   text-decoration: none;
-  color: darkblue;
+  color: none;
 }
 #farenheit {
   font-size: 30px;
   position: relative;
   top: -20px;
   text-decoration: none;
-  color: darkblue;
+}
+
+.col-6 .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.col-6.active:hover {
+  text-decoration: none;
 }

@@ -65,6 +65,7 @@ function searchPlace(event) {
         let degree = document.querySelector("#degreeShow");
         let temperature = Math.round(response.data.main.temp);
         degree.innerHTML = `${temperature}`;
+        celsiusTemperature = response.data.main.temp;
         document.querySelector("#current-city").innerHTML = response.data.name;
         document.querySelector("#high-temp").innerHTML = Math.round(response.data.main.temp_max);
         document.querySelector("#low-temp").innerHTML = Math.round(response.data.main.temp_min);
@@ -113,3 +114,32 @@ function getCurrentPosition() {
 
 let gPS = document.querySelector("button1");
 gPS.addEventListener("click", getCurrentPosition);
+
+
+function displayFarenheitTemp(event){
+    event.preventDefault();
+    let farenheitTemperature = ((celsiusTemperature * 9)  /  5) + 32;
+   document.querySelector("#degreeShow").innerHTML = Math.round (farenheitTemperature);
+    //remove active class from Celsius Link
+celsiusLink.classList.remove("active");
+//add active to Farenheit Link
+farenheitLink.classList.add("active");
+    
+}
+
+let farenheitLink = document.querySelector("#farenheit");
+farenheitLink.addEventListener("click", displayFarenheitTemp);
+
+let celsiusTemperature = null;
+
+function displayCelsiusTemp(event){
+    event.preventDefault();
+    document.querySelector("#degreeShow").innerHTML = Math.round(celsiusTemperature);
+   
+celsiusLink.classList.add("active");
+
+farenheitLink.classList.remove("active");
+}
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
