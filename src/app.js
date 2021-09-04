@@ -4,11 +4,10 @@ function formatDate(timestamp){
     
     //let timeDate = document.querySelector("#current-date");
     //let time = document.querySelector("#current-time");
-   
     let date = new Date(timestamp);
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDay()];
-
+    
     let hour = date.getHours();
     if (hour < 10) {
         hour = `0${hour}`;
@@ -17,14 +16,16 @@ function formatDate(timestamp){
     if (minute < 10) {
         minute = `0${minute}`;
     }
-
+    
     let year = date.getFullYear();
     
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let month = months[date.getMonth()];
     
-    //return `${day}, ${month} ${date}, ${year}`;
+    
+    
     return `${day}, ${month}, ${year}`;
+    //return `${day}, ${month}, ${year} ${hour}:${minute}`;
     
     //timeDate.innerHTML = ` ${day}, ${month} ${date}, ${year}`;
     //time.innerHTML = `${hour}:${minute}`; 
@@ -96,6 +97,8 @@ function showPosition(position) {
     latitude = latitude.toFixed(2);
     let longitude = position.coords.longitude;
     longitude = longitude.toFixed(2);
+    console.log(latitude);
+    console.log(longitude);
     h3.innerHTML = `Your Latitude is ${latitude} and Your Longitude is ${longitude} `;
 }
 
@@ -104,5 +107,5 @@ function getCurrentPosition() {
     navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let gPS = document.querySelector("#current-button");
+let gPS = document.querySelector("button1");
 gPS.addEventListener("click", getCurrentPosition);
