@@ -78,6 +78,10 @@ function searchPlace(event) {
         document.querySelector("#current-date").innerHTML = formatDate(response.data.dt * 1000);
         document.querySelector("#current-time").innerHTML = formatTime(response.data.dt * 1000);
 
+        let iconElement =  document.querySelector("#icon");
+       iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+       iconElement.setAttribute("alt", response.data.weather[0].description);
+
     };
     let apiKey = "c7c6992fb4b628387a33963036074203";
     let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?";
