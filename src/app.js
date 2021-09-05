@@ -1,3 +1,5 @@
+
+//show date and time
 function formatDate(timestamp){
     //let timestamp = new Date();
     
@@ -48,6 +50,15 @@ function formatTime(timestamp){
     return `${hour}:${minute}`;
 }
 
+//function for forecasting
+
+ function getForecast(coordinates){
+    console.log(coordinates);
+    let apiKey = "c7c6992fb4b628387a33963036074203";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+}
 
 
 function searchPlace(event) {
@@ -60,8 +71,10 @@ function searchPlace(event) {
 
     /* console.log(newCity); */
 
+   
+    
     function showTemperature(response) {
-        event.preventDefault();
+        
         let degree = document.querySelector("#degreeShow");
         let temperature = Math.round(response.data.main.temp);
         degree.innerHTML = `${temperature}`;
@@ -82,13 +95,14 @@ function searchPlace(event) {
         let iconElement =  document.querySelector("#icon");
        iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
        iconElement.setAttribute("alt", response.data.weather[0].description);
-       
+       getForecast(response.data.coord);
 
     };
     let apiKey = "c7c6992fb4b628387a33963036074203";
     let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?";
     let apiUrl = `${apiEndPoint}q=${newCity}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(showTemperature);
+    
 
 
 }
@@ -107,8 +121,8 @@ function showPosition(position) {
     latitude = latitude.toFixed(2);
     let longitude = position.coords.longitude;
     longitude = longitude.toFixed(2);
-    console.log(latitude);
-    console.log(longitude);
+    /* console.log(latitude);
+    console.log(longitude); */
     h3.innerHTML = `Your Latitude is ${latitude} and Your Longitude is ${longitude} `;
 }
 
@@ -175,6 +189,7 @@ function showDefaultPlace(response){
         let iconElement =  document.querySelector("#icon");
        iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
        iconElement.setAttribute("alt", response.data.weather[0].description);
+       
 }
 
 
@@ -191,9 +206,8 @@ search();
 
 //weather forecast
 
-
-
-function displayForecast(){
+function displayForecast(response){
+    console.log(response.data.daily);
     let forecastELement = document.querySelector("#forecast");
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
@@ -224,4 +238,3 @@ function displayForecast(){
 };
 
 
-displayForecast();
