@@ -82,6 +82,7 @@ function searchPlace(event) {
         let iconElement =  document.querySelector("#icon");
        iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
        iconElement.setAttribute("alt", response.data.weather[0].description);
+       
 
     };
     let apiKey = "c7c6992fb4b628387a33963036074203";
@@ -186,3 +187,41 @@ function search(city){
 }
 
 search();
+
+
+//weather forecast
+
+
+
+function displayForecast(){
+    let forecastELement = document.querySelector("#forecast");
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+    let forecastHTML =`<div class="row">`;
+
+    days.forEach(function(day){
+    forecastHTML = forecastHTML +
+         `
+        <div class="col-2" id= forecast-detail>
+        <div class="weather-forecast-date">${day}</div>
+    
+        7/25
+        <br />
+        <img
+        src="http://openweathermap.org/img/wn/50d@2x.png"
+        alt=""
+        width="42"
+        />
+        <br />
+        37℃
+      </div>
+    
+    `;
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastELement.innerHTML= forecastHTML;
+    
+};
+
+
+displayForecast();
