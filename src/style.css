@@ -50,7 +50,7 @@ h3 {
   background-color: white;
 
   border: dotted grey;
-  margin: 0 50px;
+
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -76,12 +76,13 @@ h3 {
   margin: 0 5px;
 }
 .col-2 {
+  border-radius: 8px;
   border: dotted grey;
   margin: 0 auto;
   font-size: 20px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background: linear-gradient(top, #dfe9f3 0%, white 100%);
 }
 
 .detail-temp-sun {
@@ -122,4 +123,9 @@ h3 {
 
 .col-6.active:hover {
   text-decoration: none;
+}
+
+#current-button {
+  cursor: pointer;
+  font-size: 20px;
 }
