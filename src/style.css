@@ -1,3 +1,7 @@
+/* body {
+  background: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+} */
+
 h1 {
   color: black;
   font-size: 20px;
@@ -33,17 +37,18 @@ h3 {
   max-height: 480px;
   display: block;
   box-shadow: 10px 10px 15px grey;
-  border: solid grey;
+  border: hidden grey;
   padding: 20px 20px;
   margin: 100px auto;
   border-radius: 15px;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at 7.5% 24%,
     rgb(237, 161, 193) 0%,
     rgb(250, 178, 172) 25.5%,
     rgb(190, 228, 210) 62.3%,
     rgb(215, 248, 247) 93.8%
-  );
+  ); */
+  background: linear-gradient(to top, #feada6 0%, #f5efef 100%);
 }
 
 .button {
