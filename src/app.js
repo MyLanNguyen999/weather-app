@@ -95,6 +95,10 @@ function searchPlace(event) {
 let button = document.querySelector("button");
 button.addEventListener("click", searchPlace);
 
+
+
+//show current location
+
 function showPosition(position) {
 
     let h3 = document.querySelector("h3");
@@ -115,6 +119,8 @@ function getCurrentPosition() {
 let gPS = document.querySelector("button1");
 gPS.addEventListener("click", getCurrentPosition);
 
+
+//celsius and farenheit show
 
 function displayFarenheitTemp(event){
     event.preventDefault();
@@ -143,3 +149,40 @@ farenheitLink.classList.remove("active");
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+//show New York by default whenever page is reloaded
+
+function showDefaultPlace(response){
+    
+        let degree = document.querySelector("#degreeShow");
+        let temperature = Math.round(response.data.main.temp);
+        degree.innerHTML = `${temperature}`;
+        celsiusTemperature = response.data.main.temp;
+        document.querySelector("#current-city").innerHTML = response.data.name;
+        document.querySelector("#high-temp").innerHTML = Math.round(response.data.main.temp_max);
+        document.querySelector("#low-temp").innerHTML = Math.round(response.data.main.temp_min);
+        console.log(response.data);
+
+        document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+        document.querySelector("#wind").innerHTML = Math.round(
+            response.data.wind.speed);
+        document.querySelector("#description").innerHTML =
+            response.data.weather[0].main;
+        document.querySelector("#current-date").innerHTML = formatDate(response.data.dt * 1000);
+        document.querySelector("#current-time").innerHTML = formatTime(response.data.dt * 1000);
+
+        let iconElement =  document.querySelector("#icon");
+       iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+       iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
+
+function search(city){
+    
+    let apiKey = "c7c6992fb4b628387a33963036074203";
+    let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?";
+    let apiUrl = `${apiEndPoint}q=new york&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(showDefaultPlace);
+}
+
+search();
