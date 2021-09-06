@@ -116,7 +116,7 @@ button.addEventListener("click", searchPlace);
 
 //show current location
 
-function showPosition(position) {
+/* function showPosition(position) {
 
     let h3 = document.querySelector("h3");
     let latitude = position.coords.latitude;
@@ -124,7 +124,7 @@ function showPosition(position) {
     let longitude = position.coords.longitude;
     longitude = longitude.toFixed(2);
     /* console.log(latitude);
-    console.log(longitude); */
+    console.log(longitude); 
     h3.innerHTML = `Your Latitude is ${latitude} and Your Longitude is ${longitude} `;
 }
 
@@ -134,7 +134,7 @@ function getCurrentPosition() {
 }
 
 let gPS = document.querySelector("button1");
-gPS.addEventListener("click", getCurrentPosition);
+gPS.addEventListener("click", getCurrentPosition); */
 
 
 //celsius and farenheit show
