@@ -115,3 +115,6 @@ h3 {
   cursor: pointer;
   font-size: 20px;
 }
+#farenheitForecast {
+  font-size: 14px;
+}

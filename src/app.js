@@ -191,6 +191,7 @@ function showDefaultPlace(response){
         let iconElement =  document.querySelector("#icon");
        iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
        iconElement.setAttribute("alt", response.data.weather[0].description);
+       getForecast(response.data.coord);
        
 }
 
@@ -216,6 +217,7 @@ function formatDayInForecast(timestamp){
     //let month = date.getMonth();
     return days[day];
     //return months[month];
+    
 }
 
 
@@ -241,7 +243,8 @@ function displayForecast(response){
         width="42"
         />
         <br />
-        ${Math.round(forecastDay.temp.day)}℃
+        ${Math.round(forecastDay.temp.day)}℃  
+        <small id=farenheitForecast>${Math.round(forecastDay.temp.day*9/5 + 32)}°F</small>
       </div>
     
     `;}
