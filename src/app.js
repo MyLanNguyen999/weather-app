@@ -82,8 +82,8 @@ function searchPlace(event) {
         degree.innerHTML = `${temperature}`;
         celsiusTemperature = response.data.main.temp;
         document.querySelector("#current-city").innerHTML = response.data.name;
-        document.querySelector("#high-temp").innerHTML = Math.round(response.data.main.temp_max);
-        document.querySelector("#low-temp").innerHTML = Math.round(response.data.main.temp_min);
+        //document.querySelector("#high-temp").innerHTML = Math.round(response.data.main.temp_max);
+        //document.querySelector("#low-temp").innerHTML = Math.round(response.data.main.temp_min);
         console.log(response.data);
 
         document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -147,6 +147,8 @@ function displayFarenheitTemp(event){
 celsiusLink.classList.remove("active");
 //add active to Farenheit Link
 farenheitLink.classList.add("active");
+
+
     
 }
 
@@ -176,8 +178,8 @@ function showDefaultPlace(response){
         degree.innerHTML = `${temperature}`;
         celsiusTemperature = response.data.main.temp;
         document.querySelector("#current-city").innerHTML = response.data.name;
-        document.querySelector("#high-temp").innerHTML = Math.round(response.data.main.temp_max);
-        document.querySelector("#low-temp").innerHTML = Math.round(response.data.main.temp_min);
+        //document.querySelector("#high-temp").innerHTML = Math.round(response.data.main.temp_max);
+        //document.querySelector("#low-temp").innerHTML = Math.round(response.data.main.temp_min);
         console.log(response.data);
 
         document.querySelector("#humidity").innerHTML = response.data.main.humidity;

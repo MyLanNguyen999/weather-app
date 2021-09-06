@@ -32,7 +32,7 @@ h3 {
   max-width: 600px;
   max-height: 480px;
   display: block;
-  box-shadow: 10px 10px 15px grey;
+  box-shadow: 10px 10px 15px #48484a;
   border: hidden grey;
   padding: 20px 20px;
   margin: 100px auto;
@@ -44,7 +44,12 @@ h3 {
     rgb(190, 228, 210) 62.3%,
     rgb(215, 248, 247) 93.8%
   ); */
-  background: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+
+  background: linear-gradient(
+    180deg,
+    rgb(254, 173, 166) 0%,
+    rgb(245, 239, 239) 100%
+  );
 }
 
 .button {
@@ -117,4 +122,11 @@ h3 {
 }
 #farenheitForecast {
   font-size: 14px;
+}
+
+#open-source {
+  font-size: 15px;
+  margin: 9px 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
