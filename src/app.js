@@ -7,6 +7,7 @@ function formatDate(timestamp){
     //let timeDate = document.querySelector("#current-date");
     //let time = document.querySelector("#current-time");
     let date = new Date(timestamp);
+//console.log(date.toDateString());
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDay()];
     
@@ -26,10 +27,11 @@ function formatDate(timestamp){
     
     
     
-    return `${day}, ${month}, ${year}`;
+    return `${date.toDateString()}`;
+    
     //return `${day}, ${month}, ${year} ${hour}:${minute}`;
     
-    //timeDate.innerHTML = ` ${day}, ${month} ${date}, ${year}`;
+    //timeDate.innerHTML = `${date}, ${year}`;
     //time.innerHTML = `${hour}:${minute}`; 
 
 }
@@ -53,7 +55,7 @@ function formatTime(timestamp){
 //function for forecasting
 
  function getForecast(coordinates){
-    console.log(coordinates);
+    //console.log(coordinates);
     let apiKey = "c7c6992fb4b628387a33963036074203";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     console.log(apiUrl);
@@ -74,7 +76,7 @@ function searchPlace(event) {
    
     
     function showTemperature(response) {
-        
+        console.log(response.data.dt);
         let degree = document.querySelector("#degreeShow");
         let temperature = Math.round(response.data.main.temp);
         degree.innerHTML = `${temperature}`;
@@ -206,35 +208,46 @@ search();
 
 //weather forecast
 
+function formatDayInForecast(timestamp){
+    let date = new Date (timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    //let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    //let month = date.getMonth();
+    return days[day];
+    //return months[month];
+}
+
+
+
 function displayForecast(response){
-    console.log(response.data.daily);
+    //console.log(response.data.daily);
+    let forecast = response.data.daily;
     let forecastELement = document.querySelector("#forecast");
-    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+    //let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
     let forecastHTML =`<div class="row">`;
 
-    days.forEach(function(day){
+    forecast.forEach(function(forecastDay, index){
+        if (index < 5)
+        {
     forecastHTML = forecastHTML +
          `
         <div class="col-2" id= forecast-detail>
-        <div class="weather-forecast-date">${day}</div>
-    
-        7/25
-        <br />
+        <div class="weather-forecast-date">${formatDayInForecast(forecastDay.dt)}</div>
         <img
-        src="http://openweathermap.org/img/wn/50d@2x.png"
+        src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
         alt=""
         width="42"
         />
         <br />
-        37℃
+        ${Math.round(forecastDay.temp.day)}℃
       </div>
     
-    `;
+    `;}
     });
     forecastHTML = forecastHTML + `</div>`;
     forecastELement.innerHTML= forecastHTML;
-    
 };
 
 
